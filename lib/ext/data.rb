@@ -1,0 +1,2 @@
+class Ext::Data
+end

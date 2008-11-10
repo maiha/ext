@@ -1,0 +1,62 @@
+Ext
+===
+
+Ext on Rails plugin
+
+
+Install
+=======
+
+1) install this plugin
+
+Use "svn co" or "svn export" for installing method, because "plugin install"
+has a bug that fails to fetch all files named 'httpXXX'.
+
+   cd vendor/plugins
+   svn co http://wota.jp/svn/rails/plugins/branches/stable/ext/
+
+
+2) install following plugins too.
+
+This plugin depends on following plugins.
+
+   ruby script/plugin install http://wota.jp/svn/rails/plugins/branches/stable/dsl_accessor/
+   ruby script/plugin install http://wota.jp/svn/rails/plugins/branches/stable/named_options/
+
+Here, feel free to run plugin command, because these don't contain
+any 'httpXXX' files.
+
+
+3) install Ext js library
+
+
+Execute following lines in RAILS_ROOT directory.
+
+   wget http://www.yui-ext.com/deploy/ext-1.0-alpha3.zip
+   unzip ext-1.0-alpha3.zip
+   cd public
+   ln -s ../ext-1.0-alpha3 ext
+
+Now, you can see "public/ext/XXX" files.
+
+
+Paginate
+========
+
+  class UserController < ApplicationController
+    ext_paginate User, 10
+  end
+
+then visit '/user/index'
+
+
+More
+====
+
+see this page
+
+http://wota.jp/ac/?date=20070406
+
+
+Copyright (c) 2008 maiha@wota.jp, released under the MIT license
+
